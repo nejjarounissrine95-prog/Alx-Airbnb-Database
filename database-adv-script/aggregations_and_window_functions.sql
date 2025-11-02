@@ -1,10 +1,9 @@
 -- ===========================================
 -- File: aggregations_and_window_functions.sql
--- Project: Unleashing Advanced Querying Power
--- Task 2: Apply Aggregations and Window Functions
+
 -- ===========================================
 
--- 1️⃣ Aggregation: Total number of bookings made by each user
+-- 1. Aggregation: Total number of bookings made by each user
 SELECT 
     u.user_id,
     u.full_name,
@@ -15,7 +14,7 @@ LEFT JOIN bookings AS b
 GROUP BY u.user_id, u.full_name
 ORDER BY total_bookings DESC;
 
--- 2️⃣ Window Functions: Rank properties by total number of bookings
+-- 2. Window Functions: Rank properties by total number of bookings
 WITH property_totals AS (
     SELECT
         p.property_id,
